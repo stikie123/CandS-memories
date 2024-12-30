@@ -14,6 +14,24 @@
       background-color: #f5f5f5;
     }
 
+    .text-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    #text {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #text.expanded {
+      display: block;
+      overflow: visible;
+    }
+
     .image-container {
       display: flex;
       flex-direction: column;
@@ -21,7 +39,8 @@
     }
 
     .memory-image {
-      max-width: 100%;
+      max-width: 80%;
+      max-height: 400px;
       margin: 20px;
       border-radius: 8px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -74,6 +93,7 @@
             Find by Date
           </a>
           <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#date2">December 21-29, 2024: The Lock</a>
             <a class="dropdown-item" href="#date1">September 22, 2024(First visit)</a>
             <!-- Add more dates as needed -->
           </div>
@@ -81,10 +101,78 @@
       </ul>
     </div>
   </nav>
+
   <h1 class="text-center mt-5">To a Million more and each more special than the last❤️</h1>
   <!-- Content -->
   <div class="container mt-5 image-container">
-    <h1 id="date1" class="text-center mt-5">September 22, 2024 (First visit)</h1>
+    <h1 id="date2" class="text-center mt-5">December 21-29, 2024: The Lock, 10 Months</h1>
+    <div class="text-container">
+      <p id="text" class="text-center">Stiaan - Where to begin... A story of pure love, I suppose. Not perfect, but pure
+        and
+        enduring. Though I care not for the casting of the reel, my princess surely enjoys the thrill of the catch, and
+        that alone was reason enough—for her happiness is worth more than gold to me. Even though I was sick the entire
+        day, it was worth it for the memory it gave us. For, in the end, it’s not about what you do but with whom you do
+        it.<br><br>
+
+        Then came the day—calm and nice. We spent it with my couch, and it ended with a bang. For the first
+        time, we were honest, brave, and connected. We shared the horrors of the past. Though difficult and painful,
+        some
+        truths hurt, others saddened. It was a test to be foretold. Though I understand, sadness and sorrow cloud my
+        mind.
+        My past has come and gone, but my darling’s still remains—a shadow never fully absent. It’s a true challenge for
+        a
+        man, a knight of self-respect. Her shadow is not mine to fight nor to diminish with light. I fear its presence
+        with unease, for this fight is not mine, and it breaks my heart. I am merely the side-line knight, supporting
+        her
+        with light.<br><br><br>
+
+        Now I understand the cross she bears, and I long for the day it may clear—the day her heart is no longer
+        coffined
+        and hidden, but open and free to love and to feel. I yearn for the princess concealed, the one I have glimpsed
+        through the misty blue of her eyes. Through the fog, I have only seen a wonderful, incredible princess waiting
+        to
+        come free.<br><br>
+
+        My love stands strong, and I have no fear, for the Lord our God holds the keys. Together, we locked our future
+        on
+        the pier, placing it into His trusting, loving hands. We know our hearts are not pure, but as long as He remains
+        our focus—our compass, our Father, our counselor—whether together or apart, whatever the future may hold, we
+        need
+        not worry. We need not fear, for He has a plan, and His will shall be done.<br>
+
+        I love you more, and may nothing but God take down the tall stack of layers and layers of trust and love we
+        share. I know
+        it must hurt to see me struggle, but while you have learned to hide the pain deep down, for me, it is new and
+        fresh—a new pain. For the love of my life is captive inside, and the shadow that follows like good friends do.
+        Yet, I know the shadow doesn’t cast a cool, nice shade but blocks the view of the snake seeking shade. I wish I
+        were better, but you know I try. Just stick with me and show me how, for you are a far better soul and spirit
+        than
+        I could ever be.<br><br>
+
+        I Love you. I know but one thing and I know I choose to love you more every day And I pray that aseptically when
+        its hard we'll choose to'love each other.  </p>
+      <button id="toggle-btn" class="btn-dark" onclick="toggleText()">Expand</button>
+    </div>
+
+    <img src="public\WhatsApp Image 2024-12-27 at 10.41.04_28c2ad2a.jpg" alt="Memory Image 1" class="memory-image">
+    <img src="public\WhatsApp Image 2024-12-24 at 09.21.50_e81751af.jpg" alt="Memory Image 1" class="memory-image">
+    <img src="public\WhatsApp Image 2024-12-28 at 08.12.20_4075b790.jpg" alt="Memory Image 1" class="memory-image">
+  </div>
+  <div class="container mt-5 image-container">
+    <h1 id="date1" class="text-center mt-5">September 22, 2024 (First visit), 7 Months</h1>
+    <div class="text-container">
+      <p id="text" class="text-center">Stiaan - The first time together, it felt like stepping into a dream, only
+        better—because you
+        were real. You were
+        even
+        more beautiful than I had imagined, and being with you, from the first time we held hands and walked down the
+        beach
+        to
+        the first good night kiss you made everything feel complete. Starting our journey together by going to church
+        made it
+        all the more meaningful, like the perfect beginning to something
+        extraordinary.</p>
+    </div>
     <img src="public\WhatsApp Image 2024-11-10 at 20.15.23_6f21180e.jpg" alt="Memory Image 1" class="memory-image">
   </div>
 
@@ -106,6 +194,21 @@
         document.getElementById("passwordOverlay").style.display = "none";
       } else {
         alert("Incorrect password, please try again.");
+      }
+    }
+  </script>
+  <script>
+    function toggleText() {
+      const text = document.getElementById('text');
+      const button = document.getElementById('toggle-btn');
+      if (text.classList.contains('expanded')) {
+        text.classList.remove('expanded');
+        text.style.display = '-webkit-box';
+        button.innerText = 'Expand';
+      } else {
+        text.classList.add('expanded');
+        text.style.display = 'block';
+        button.innerText = 'Collapse';
       }
     }
   </script>
