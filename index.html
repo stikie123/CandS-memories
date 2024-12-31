@@ -19,7 +19,7 @@
       margin: 0 auto;
     }
 
-    #text {
+    .collapsed-text {
       display: -webkit-box;
       -webkit-line-clamp: 5;
       -webkit-box-orient: vertical;
@@ -27,9 +27,8 @@
       text-overflow: ellipsis;
     }
 
-    #text.expanded {
+    .expanded-text {
       display: block;
-      overflow: visible;
     }
 
     .image-container {
@@ -107,7 +106,7 @@
   <div class="container mt-5 image-container">
     <h1 id="date2" class="text-center mt-5">December 21-29, 2024: The Lock, 10 Months</h1>
     <div class="text-container">
-      <p id="text" class="text-center">Stiaan - Where to begin... A story of pure love, I suppose. Not perfect, but pure
+      <p id="text2" class="text-center collapsed-text">Stiaan - Where to begin... A story of pure love, I suppose. Not perfect, but pure
         and
         enduring. Though I care not for the casting of the reel, my princess surely enjoys the thrill of the catch, and
         that alone was reason enough—for her happiness is worth more than gold to me. Even though I was sick the entire
@@ -151,7 +150,7 @@
 
         I Love you. I know but one thing and I know I choose to love you more every day And I pray that aseptically when
         its hard we'll choose to'love each other.  </p>
-      <button id="toggle-btn" class="btn-dark" onclick="toggleText()">Expand</button>
+      <button id="toggle-btn2" class="btn-dark" onclick="toggleText(2)">Expand</button>
     </div>
 
     <img src="public\WhatsApp Image 2024-12-27 at 10.41.04_28c2ad2a.jpg" alt="Memory Image 1" class="memory-image">
@@ -161,7 +160,7 @@
   <div class="container mt-5 image-container">
     <h1 id="date1" class="text-center mt-5">September 22, 2024 (First visit), 7 Months</h1>
     <div class="text-container">
-      <p id="text" class="text-center">Stiaan - The first time together, it felt like stepping into a dream, only
+      <p id="text1" class="text-center collapsed-text">Stiaan - The first time together, it felt like stepping into a dream, only
         better—because you
         were real. You were
         even
@@ -172,7 +171,7 @@
         made it
         all the more meaningful, like the perfect beginning to something
         extraordinary.</p>
-       <button id="toggle-btn" class="btn-dark" onclick="toggleText()">Expand</button>
+       <button id="toggle-btn1" class="btn-dark" onclick="toggleText(1)">Expand</button>
     </div>
     <img src="public\WhatsApp Image 2024-11-10 at 20.15.23_6f21180e.jpg" alt="Memory Image 1" class="memory-image">
   </div>
@@ -197,11 +196,11 @@
         alert("Incorrect password, please try again.");
       }
     }
-  </script>
-  <script>
-    function toggleText() {
-      const text = document.getElementById('text');
-      const button = document.getElementById('toggle-btn');
+
+    // Toggle Text
+    function toggleText(num) {
+      const text = document.getElementById('text' + num);
+      const button = document.getElementById('toggle-btn' + num);
       if (text.classList.contains('expanded')) {
         text.classList.remove('expanded');
         text.style.display = '-webkit-box';
