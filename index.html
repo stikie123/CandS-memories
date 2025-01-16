@@ -86,6 +86,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto" id="navbarList">
+        <!-- Dynamicly added -->
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
@@ -183,15 +188,27 @@
 
   <!-- Password Protection Script -->
   <script>
+ 
+
     function showPasswordPrompt() {
       document.getElementById("passwordOverlay").style.display = "flex";
     }
 
     function checkPassword() {
+      const navbarList = document.getElementById("navbarList");
       const password = document.getElementById("passwordInput").value;
       const correctPassword = "Princess123"; // Set your password here
       if (password === correctPassword) {
         document.getElementById("passwordOverlay").style.display = "none";
+
+        const MemoriesLink = document.createElement('li');
+        MemoriesLink.classList.add('nav-item');
+        MemoriesLink.innerHTML = `<a class="nav-link" href="index.html">Memories</a>`;
+        navbarList.appendChild(MemoriesLink);
+        const specialMomentsLink = document.createElement('li');
+        specialMomentsLink.classList.add('nav-item');
+        specialMomentsLink.innerHTML = `<a class="nav-link" href="special-moments.html">Special Moments</a>`;
+        navbarList.appendChild(specialMomentsLink);
       } else {
         alert("Incorrect password, please try again.");
       }
